@@ -48,22 +48,5 @@ URL-SHORTENER-PROJ/
 
 1. Navigate to the backend folder:
 
-
+```bash
 cd url-shortener-sb
-
-
-
-	2.	Update src/main/resources/application.properties:
-
-
-spring.datasource.url=jdbc:mysql://localhost:3306/url_shortener
-spring.datasource.username=root
-spring.datasource.password=yourpassword
-spring.jpa.hibernate.ddl-auto=update
-jwt.secret=your_jwt_secret_key
-
-
-
-
-./mvnw install
-./mvnw spring-boot:run
