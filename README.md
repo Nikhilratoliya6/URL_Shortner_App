@@ -120,8 +120,8 @@ docker run -p 8080:8080 url-shortener-backend
 ## 👨‍💻 Author
 
 Nikhil Ratoliya  
-GitHub: https://github.com/your-github  
-LinkedIn: https://linkedin.com/in/your-linkedin
+GitHub: https://github.com/Nikhilratoliya6
+LinkedIn: https://www.linkedin.com/in/nikhil-ratoliya-5b2999258/
 
 ---
 
