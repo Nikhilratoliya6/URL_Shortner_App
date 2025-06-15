@@ -1,124 +1,130 @@
+# 🔗 URL Shortener Application
 
-# 🔗 URL Shortener Web Application
+A full-stack URL Shortener web application that allows users to:
 
-A production-ready full-stack URL shortener application that allows users to shorten long URLs, track usage analytics, and view interactive charts. It includes secure authentication and role-based access, built using modern technologies:
+- 🔹 Shorten long URLs into compact, shareable links  
+- 📊 Track click analytics using interactive charts  
+- 🔐 Register/login securely with JWT authentication  
+- 🧑‍💼 Use an admin panel to monitor all URLs  
 
-- ⚙️ **Backend:** Spring Boot  
-- 💻 **Frontend:** React + Vite  
-- 🛢 **Database:** MySQL or H2  
-- 🔐 **Authentication:** Spring Security with JWT  
-- 📊 **Analytics:** Chart.js  
-- 🐳 **Deployment Ready:** Docker Support  
+---
+
+### 🧱 Tech Stack
+
+- Backend: Spring Boot + Spring Security (JWT)
+- Frontend: React + Vite + TailwindCSS
+- Database: MySQL (or H2 for dev)
+- Charts: Chart.js
+- Docker: Containerized support for easy deployment
 
 ---
 
 ## 📁 Project Structure
 
-URL-SHORTENER-PROJ/
-├── url-shortener-react/   # Frontend (React, Vite, Tailwind)
-└── url-shortener-sb/      # Backend (Spring Boot, JWT, MySQL)
+URL-SHORTENER-PROJ/  
+├── url-shortener-react/   # Frontend (React + Vite + Tailwind)  
+└── url-shortener-sb/      # Backend (Spring Boot + JWT + MySQL)
 
 ---
 
-## 🚀 Key Features
+## 🚀 Features
 
-- 🔗 Shorten long URLs into compact, shareable links  
-- 🔐 User authentication and role-based access (JWT)  
-- 📈 Click tracking and real-time usage analytics  
-- 📊 Visual dashboards using Chart.js  
-- 🗂 Admin panel to manage all shortened links  
-- 📤 RESTful API architecture  
-- ☁️ Environment variable support via `.env`  
-- 🐳 Dockerized backend setup for containerized deployment  
+- ✅ Convert long URLs into short ones  
+- 🔐 User authentication with JWT  
+- 📊 Track number of clicks for each short URL  
+- 📈 View analytics using charts  
+- 🧾 Clean and RESTful API  
+- 🗃 Admin dashboard to manage URLs  
+- ☁️ Environment variable support  
+- 🐳 Docker support for deployment
 
 ---
 
 ## 🛠️ Getting Started
 
-### ✅ Prerequisites
-
-Ensure the following are installed on your machine:
+### 📦 Prerequisites
 
 - Java 17+  
 - Node.js 16+  
 - Maven  
-- MySQL (or use H2 for in-memory DB)  
 - Git  
+- MySQL (or use H2)
 
 ---
 
-### 🔧 Backend Setup (Spring Boot)
+### 🖥️ Backend Setup (Spring Boot)
 
-```bash
-# 1. Navigate to the backend directory
+1. Navigate to the backend folder:
+
 cd url-shortener-sb
 
-2. Configure the application:
+2. Update the application.properties file:
 
-Edit src/main/resources/application.properties:
-
-spring.datasource.url=jdbc:mysql://localhost:3306/url_shortener
-spring.datasource.username=root
-spring.datasource.password=yourpassword
-spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://localhost:3306/url_shortener  
+spring.datasource.username=root  
+spring.datasource.password=yourpassword  
+spring.jpa.hibernate.ddl-auto=update  
 jwt.secret=your_jwt_secret_key
 
-# 3. Build and run the app
-./mvnw install
+3. Run the backend:
+
+./mvnw install  
 ./mvnw spring-boot:run
 
-Server will be running at: http://localhost:8080
+The server will start at: http://localhost:8080
 
-⸻
+---
 
-🌐 Frontend Setup (React + Vite)
+### 🌐 Frontend Setup (React + Vite)
 
-# 1. Navigate to the frontend directory
+1. Navigate to the frontend folder:
+
 cd ../url-shortener-react
 
-2. Create a .env file in the root directory:
+2. Create a .env file with the following content:
 
 VITE_API_BASE_URL=http://localhost:8080/api
 
-# 3. Install dependencies and start dev server
-npm install
+3. Install dependencies and run the frontend:
+
+npm install  
 npm run dev
 
-Frontend will be available at: http://localhost:5173
+The frontend will start at: http://localhost:5173
 
-⸻
+---
 
-📡 Sample API Endpoints
-	•	POST /api/auth/register — Register a new user
-	•	POST /api/auth/login — User login and JWT issuance
-	•	POST /api/shorten — Shorten a URL (authenticated)
-	•	GET /api/shorten/all — Retrieve all URLs for the user
-	•	GET /{shortCode} — Redirect to original URL
+## 🔌 API Endpoints
 
-⸻
+POST   /api/auth/register   — Register a new user  
+POST   /api/auth/login      — Login and receive JWT  
+POST   /api/shorten         — Shorten a new URL (auth required)  
+GET    /api/shorten/all     — Get all URLs for the user  
+GET    /{shortCode}         — Redirect to original URL  
 
-🐳 Docker Setup (Optional)
+---
 
-If you prefer Docker-based deployment:
+## 🐳 Docker Support (Optional)
 
-# Backend Docker
+1. Navigate to the backend:
+
 cd url-shortener-sb
-docker build -t url-shortener-backend .
+
+2. Build and run the Docker container:
+
+docker build -t url-shortener-backend .  
 docker run -p 8080:8080 url-shortener-backend
 
-You can similarly containerize the frontend if needed.
+---
 
-⸻
+## 👨‍💻 Author
 
-👤 Author
+Nikhil Ratoliya  
+GitHub: https://github.com/your-github  
+LinkedIn: https://linkedin.com/in/your-linkedin
 
-Nikhil Ratoliya
-GitHub • LinkedIn
+---
 
-⸻
-
-📄 License
+## 📃 License
 
 This project is licensed under the MIT License.
-
-Let me know if you want to include screenshots, deployment instructions (like Netlify or Render), or badges (e.g., build status, license, tech stack) too!
